@@ -1,2 +1,2 @@
-# dmc-icassp2021
-Materials for <i>Automatic multitrack mixing with a differentiable mixing console of neural audio effects</i>
+# RemFX (WASPAA 2023)
+Materials for <i>General Purpose Audio Effect Removal</i>
