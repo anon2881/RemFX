@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Anon2881">
+    <title>General Purpose Audio Effect Removal</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="theme-color" content="#563d7c">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <!-- Page Content -->
+    <div class="text-center">
+        <div class="row">
+            <div class="col-lg-12">
+                <br>
+                <h1 class="mt-5 mb-3">General Purpose Audio Effect Removal
+                </h1>
+                <p class="lead">
+                    <a href="">Anonymous Authors</a>
+                </p>
+
+                <div>
+                    <a class="btn btn-outline-dark" href="assets/paper.pdf" type="button"><i
+                            class="bi bi-newspaper"></i>
+                        Paper</a>
+                    <a class="btn btn-outline-dark" href="https://github.com/" type="button">
+                        <i class="bi bi-code-slash"></i> Code</a>
+                    <!-- <a class="btn btn-outline-dark" href="" type="button"> <i class="bi bi-camera-reels"></i> Video</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section mt-5 mb-5">
+            <div class="mt-2 mb-5 text-center">
+                <img class="img-fluid" src="img/remfx-headline-detail.svg">
+            </div>
+            <div class="abstract">
+                <h2>Abstract</h1>
+                    <hr>
+                    <p>
+                        Although the design and application of audio effects is well understood, the inverse problem of
+                        removing these effects is significantly more challenging and far less studied.
+                        Recently, deep learning has been applied to audio effect removal, however existing approaches
+                        have focused on narrow formulations considering only one effect or source type at time.
+                        In realistic scenarios, multiple effects are applied with varying source content. This motivates
+                        a more general task, which we refer to as <i>general purpose audio effect removal</i>.
+                        We developed a dataset for this task using five audio effects across four different sources and
+                        used it to train and evaluate a set of existing architectures.
+                        We found that no single model performed optimally on all effect types and sources.
+                        To address this, we introduced RemFX, an approach designed to mirror the compositionality of
+                        apply effects.
+                        We first trained a set of the best performing effect-specific removal models and then leveraged
+                        an audio effect classification model to dynamically construct a graph of our models at
+                        inference.
+                        We found our approach outperforms single model baselines, however examples with many effects
+                        present remain challenging.
+                    </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="">Results</h2>
+            <hr>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+
+            <table class="table table-sm text-center" style="vertical-align: middle;">
+                <tr>
+                    <th class="passage">Example</th>
+                    <th>Input</th>
+                    <th> <span class="target">Target</span> <br> <span class="detail">(No Effects)</span></th>
+                    <th> <span class="signaltrain">Hybrid Demucs</span> <br> <span class="detail">(Défossez et
+                            al.)</span>
+                    </th>
+                    <th> <span class="tcn">DCUNet</span> <br> <span class="detail">(Choi et al.)</span> </th>
+                    <th> <span class="lstm">RemFX-Oracle</span> <br> <span class="detail">(Ours)</span></th>
+                    <th> <span class="lstm">RemFX-Detect</span> <br> <span class="detail">(Ours)</span></th>
+                </tr>
+                <tr>
+                    <td class="passage">Song <p class="params">N=1</p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">Guitar <p class="params">N=2</p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+            </table>
+            <p class="text-center">No normalization has been applied to the listening samples, but they have been
+                encoded to VBR mp3.</p>
+        </div>
+
+
+
+        <div class="section">
+            <h2>Citation</h2>
+            <hr>
+            <div style="background-color: #e9ecef;">
+                <pre>
+                <code>
+    @article{anon2023audioeffectremoval,
+        title={General purpose audio effect removal},
+        author={Anonymous Authors},
+        booktitle={Preprint. Under review.},
+        year={2023}
+    }</code>
+                </pre>
+            </div>
+        </div>
+
+        <hr>
+        <footer>
+            <p>Under double-blind review at WASPAA 2023</p>
+            <p></p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
