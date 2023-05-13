@@ -28,7 +28,7 @@
                 </p>
 
                 <div>
-                    <a class="btn btn-outline-dark" href="assets/final_WASPAA_2023__Audio_effect_removal.pdf" type="button"><i
+                    <a class="btn btn-outline-dark" href="assets/remfx.pdf" type="button"><i
                             class="bi bi-newspaper"></i>
                         Paper</a>
                     <a class="btn btn-outline-dark" href="https://github.com/" type="button">
@@ -77,7 +77,13 @@
             <div class="row mb-4">
                 <div class="col-md-6">
                     <p>
-                        Placeholder text to describe what people should listen for in the below audio examples...
+                        Below are audio examples from the test set including unseen examples of singing voice, drums,
+                        bass, and acoustic guitar. We show both the input recording which contains
+                        different effects along with the target recording with no effects. Then we compare performance
+                        of our models RemFX-Oracle and RemFX-Detect with the monolithic baselines, which include Hybrid
+                        Demucs and DCUNet. RemFX-Oracle uses the ground truth effect labels to select the appropriate
+                        effect-specific removal models, while RemFX-Detect uses the effect classification model to
+                        select the removal models.
                     </p>
                 </div>
                 <div class="mt-2 mb-5 text-center">
@@ -87,7 +93,8 @@
 
             <table class="table table-sm text-center" style="vertical-align: middle;">
                 <tr>
-                    <th class="passage">Example</th>
+                    <th class="passage">N</th>
+                    <th class="passage">Effects</th>
                     <th>Input</th>
                     <th> <span class="target">Target</span> <br> <span class="detail">(No Effects)</span></th>
                     <th> <span class="signaltrain">Hybrid Demucs</span> <br> <span class="detail">(Défossez et
@@ -98,88 +105,613 @@
                     <th> <span class="lstm">RemFX-Detect</span> <br> <span class="detail">(Ours)</span></th>
                 </tr>
                 <tr>
-                    <td class="passage">Song <p class="params">N=1</p>
+                    <td rowspan="5">N=1</td>
+                    <td class="passage">Reverb <p class="params"></p>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio" type="audio/mpeg">
+                            <source src="audio/1/Reverb_511/dcunet_input.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio" type="audio/mpeg">
+                            <source src="audio/1/Reverb_511/dcunet_target.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio" type="audio/mpeg">
+                            <source src="audio/1/Reverb_511/demucs_prediction.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio" type="audio/mpeg">
+                            <source src="audio/1/Reverb_511/dcunet_prediction.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio" type="audio/mpeg">
+                            <source src="audio/1/Reverb_511/remfx_oracle_prediction.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio" type="audio/mpeg">
+                            <source src="audio/1/Reverb_511/remfx_chain_prediction.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                 </tr>
                 <tr>
-                    <td class="passage">Guitar <p class="params">N=2</p>
+                    <td class="passage">Compressor <p class="params"></p>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio" type="audio/mpeg">
+                            <source src="audio/1/Compressor_185/dcunet_input.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio" type="audio/mpeg">
+                            <source src="audio/1/Compressor_185/dcunet_target.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio" type="audio/mpeg">
+                            <source src="audio/1/Compressor_185/demucs_prediction.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio/" type="audio/mpeg">
+                            <source src="audio/1/Compressor_185/dcunet_prediction.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio/" type="audio/mpeg">
+                            <source src="audio/1/Compressor_185/remfx_oracle_prediction.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls class="player">
-                            <source src="audio" type="audio/mpeg">
+                            <source src="audio/1/Compressor_185/remfx_chain_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">Delay <p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Delay_174/dcunet_input.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Delay_174/dcunet_target.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Delay_174/demucs_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Delay_174/dcunet_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Delay_174/remfx_oracle_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Delay_174/remfx_chain_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">Distortion <p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Distortion_77/dcunet_input.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Distortion_77/dcunet_target.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Distortion_77/demucs_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Distortion_77/dcunet_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Distortion_77/remfx_oracle_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Distortion_77/remfx_chain_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">Chorus <p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Chorus_841/dcunet_input.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Chorus_841/dcunet_target.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Chorus_841/demucs_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Chorus_841/dcunet_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Chorus_841/remfx_oracle_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/1/Chorus_841/remfx_chain_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8"></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">N=2</td>
+                    <td class="passage">Reverb + Distortion <p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Distortion_997/dcunet_input.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Distortion_997/dcunet_target.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Distortion_997/demucs_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Distortion_997/dcunet_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Distortion_997/remfx_oracle_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Distortion_997/remfx_chain_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">Reverb + Compressor <p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Compressor_142/dcunet_input.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Compressor_142/dcunet_target.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Compressor_142/demucs_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Compressor_142/dcunet_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Compressor_142/remfx_oracle_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Reverb_Compressor_142/remfx_chain_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">Chorus + Compressor <p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Chorus_Compressor_934/dcunet_input.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Chorus_Compressor_934/dcunet_target.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Chorus_Compressor_934/demucs_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Chorus_Compressor_934/dcunet_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Chorus_Compressor_934/remfx_oracle_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/2/Chorus_Compressor_934/remfx_chain_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">N=3</td>
+                    <td class="passage">Reverb + Chorus + Compressor <p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Compressor_708/dcunet_input.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Compressor_708/dcunet_target.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Compressor_708/demucs_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Compressor_708/dcunet_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Compressor_708/remfx_oracle_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Compressor_708/remfx_chain_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">Reverb + Chorus + Distortion <p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Distortion_613/dcunet_input.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Distortion_613/dcunet_target.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Distortion_613/demucs_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Distortion_613/dcunet_prediction.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Distortion_613/remfx_oracle_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/3/Reverb_Chorus_Distortion_613/remfx_chain_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">N=4</td>
+                    <td class="passage">Reverb + Delay + Distortion + Compressor<p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Delay_Distortion_Compressor_27/dcunet_input.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Delay_Distortion_Compressor_27/dcunet_target.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Delay_Distortion_Compressor_27/demucs_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Delay_Distortion_Compressor_27/dcunet_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Delay_Distortion_Compressor_27/remfx_oracle_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Delay_Distortion_Compressor_27/remfx_chain_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">Reverb + Chorus + Delay + Distortion<p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Chorus_Delay_Distortion_111/dcunet_input.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Chorus_Delay_Distortion_111/dcunet_target.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Chorus_Delay_Distortion_111/demucs_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Chorus_Delay_Distortion_111/dcunet_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Chorus_Delay_Distortion_111/remfx_oracle_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/4/Reverb_Chorus_Delay_Distortion_111/remfx_chain_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">N=5</td>
+                    <td class="passage">Reverb + Chorus + Delay + Distortion + Compressor<p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_6/dcunet_input.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_6/dcunet_target.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_6/demucs_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_6/dcunet_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source
+                                src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_6/remfx_oracle_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_6/remfx_chain_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">Reverb + Chorus + Delay + Distortion + Compressor<p class="params"></p>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_801/dcunet_input.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_801/dcunet_target.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_801/demucs_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_801/dcunet_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source
+                                src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_801/remfx_oracle_prediction.wav"
+                                type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls class="player">
+                            <source
+                                src="audio/5/Reverb_Chorus_Delay_Distortion_Compressor_801/remfx_chain_prediction.wav"
+                                type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                 </tr>
             </table>
-            <p class="text-center">No normalization has been applied to the listening samples, but they have been
-                encoded to VBR mp3.</p>
         </div>
 
 
